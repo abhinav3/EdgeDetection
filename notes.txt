@@ -1,0 +1,34 @@
+Blur : Use it to remove noise from the image.
+
+Mean Blur : All element 1 in the 3*3 matrix.
+eg : 
+1 1 1
+1 1 1
+1 1 1
+
+Gaussian blur : Most common blur. We prioritize the pixels in the middle here. The further away we get from the pixel of interest (the middle one), the lesser weights the pixels will have. (while all pixel has same value in mean blur)
+
+eg : 
+1 2 1
+2 4 2
+1 2 1
+
+Sobel operator : It's used to find the edges in an image.
+Sobel X operator (Gx) :
+
+-1 0 1
+-2 0 2
+-1 0 1
+
+Sobel Y operator (Gy) :
+
+-1 -2 -1
+ 0  0  0
+ 1  2  1
+
+\mathbf {G} ={\sqrt {{\mathbf {G} _{x}}^{2}+{\mathbf {G} _{y}}^{2}}}
+
+1. Convert an image to gray scale.
+2. Perform gaussian blur on it.
+3. Pass it through sobel filter.
+4. Pass it through canny edge detector.
